@@ -8329,7 +8329,7 @@
     <img class="flo-header-mobile__logo-image flo-header-mobile__logo-image--light" width="150" height="100" src="wp-content/uploads/2022/05/Primary-White.png" alt="Rohit Koli Photography"/>
   </a>
                         <div class="flo-header-mobile__menu-trigger">
-                            <i class="flo-icon-menu-left"></i>
+                            <i class=""><img src="wp-content\uploads\2022\05\menu-icon-24.png" height="25px"width="25px"></i>
                         </div>
                     </div>
                     <style class='flo-core-style' media="screen">
@@ -8365,16 +8365,16 @@
     <img class="flo-header-mobile__logo-image flo-header-mobile__logo-image--light" width="150" height="100" src="wp-content/uploads/2022/05/Primary-White.png" alt="Rohit Koli Photography"/>
   </a>
                             <div class="flo-mobile-menu__close">
-                                <i class="flo-icon-close"></i>
+                                <i class=""><img src="wp-content\uploads\2022\05\menu-icon-24.png" height="25px"width="25px"></i>
                             </div>
                         </div>
                         <ul id="menu-main-menu-1" class="flo-mobile-menu__menu">
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-99">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93">
                                 
                                 <a href="http://wa.me/917841089680?text=Hello%20Rohit%2C%20I'm%20looking%20for%20a%20professional%20photographer%20to%20capture%20my%20upcoming%20event.%20Could%20we%20set%20up%20a%20time%20to%20chat%20about%20your%20availability%20and%20pricing%20packages%3F" data-font='third_level/navigation'>ENQUIRE</a>
                             </li>
                             
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-100">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92">
                                 <a href="https://www.instagram.com/rk_photography_click?igsh=MTF4a2dkaTg1aTd2NA==" data-font='third_level/navigation'>GALLERIES</a>
                             </li>
                             
@@ -8395,6 +8395,18 @@
                         document.querySelector('#target-element').scrollIntoView({ behavior: 'smooth' });
                     });
                 });
+                </script>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var menuItems = document.querySelectorAll(".flo-mobile-menu__menu .menu-item a");
+                        var closeButton = document.querySelector(".flo-mobile-menu__close");
+                
+                        menuItems.forEach(function(item) {
+                            item.addEventListener("click", function() {
+                                closeButton.click(); // Trigger the close button's click event
+                            });
+                        });
+                    });
                 </script>
                 <script>
                     document.addEventListener("DOMContentLoaded", function() {
