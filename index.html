@@ -9060,7 +9060,134 @@
                 </div>
             </div>
             <hr>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+        
+                body {
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+        
+                .slideshow-container {
+                    position: relative;
+                    max-width: 100%;
+                    margin: auto;
+                    overflow: hidden;
+                    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                }
+        
+                .slide {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+        
+                .slide img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+        
+                /* Fading animation */
+                .fade {
+                    -webkit-animation-name: fade;
+                    -webkit-animation-duration: 1.5s;
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                }
+        
+                @-webkit-keyframes fade {
+                    from {opacity: .4} 
+                    to {opacity: 1}
+                }
+        
+                @keyframes fade {
+                    from {opacity: .4} 
+                    to {opacity: 1}
+                }
+            </style>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="wp-content\events\bridal.jpg" alt="Image 1">
+                </div>
+                <div class="slide fade">
+                    <img src="wp-content\events\engage.jpg" alt="Image 2">
+                </div>
+                <div class="slide fade">
+                    <img src="wp-content\events\fashion.jpg" alt="Image 3">
+                </div>
+                <div class="slide fade">
+                    <img src="wp-content\events\pre.jpg" alt="Image 4">
+                </div>
+                <div class="slide fade">
+                    <img src="wp-content\events\haldi.jpg" alt="Image 5">
+                </div>
+            </div>
+            <hr>
+            <script>
+        let slideIndex = 0;
+        let startX, endX;
 
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function currentSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+        function showNextSlide() {
+            slideIndex++;
+            currentSlide(slideIndex);
+        }
+
+        function showPrevSlide() {
+            slideIndex--;
+            currentSlide(slideIndex);
+        }
+
+        function handleDragStart(e) {
+            e.preventDefault();
+            startX = e.clientX || e.touches[0].clientX;
+        }
+
+        function handleDragEnd(e) {
+            e.preventDefault();
+            endX = e.clientX || e.changedTouches[0].clientX;
+            if (startX > endX) {
+                showNextSlide();
+            } else {
+                showPrevSlide();
+            }
+        }
+
+        document.addEventListener('mousedown', handleDragStart);
+        document.addEventListener('touchstart', handleDragStart);
+
+        document.addEventListener('mouseup', handleDragEnd);
+        document.addEventListener('touchend', handleDragEnd);
+
+    </script>
             <style class='flo-core-style'  media="screen"> .flo-block-category-switcher-1--729.flo-block-category-switcher-1{--ec:var(--scheme_1--text--default);--border-color:var(--scheme_1--background--accent);--hover-line-ec:var(--scheme_1--background--accent)}</style>
 
   
