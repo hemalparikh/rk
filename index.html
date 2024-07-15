@@ -9113,81 +9113,83 @@
             </style>
             <div class="slideshow-container">
                 <div class="slide fade">
-                    <img src="wp-content\events\bridal.jpg" alt="Image 1">
+                    <img src="wp-content/events/bridal.jpg" alt="Image 1">
                 </div>
                 <div class="slide fade">
-                    <img src="wp-content\events\engage.jpg" alt="Image 2">
+                    <img src="wp-content/events/engage.jpg" alt="Image 2">
                 </div>
                 <div class="slide fade">
-                    <img src="wp-content\events\fashion.jpg" alt="Image 3">
+                    <img src="wp-content/events/fashion.jpg" alt="Image 3">
                 </div>
                 <div class="slide fade">
-                    <img src="wp-content\events\pre.jpg" alt="Image 4">
+                    <img src="wp-content/events/pre.jpg" alt="Image 4">
                 </div>
                 <div class="slide fade">
-                    <img src="wp-content\events\haldi.jpg" alt="Image 5">
+                    <img src="wp-content/events/haldi.jpg" alt="Image 5">
                 </div>
             </div>
             <hr>
             <script>
-        let slideIndex = 0;
-        let startX, endX;
-
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-
-        function currentSlide(n) {
-            let slides = document.getElementsByClassName("slide");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slides[slideIndex-1].style.display = "block";
-        }
-
-        function showNextSlide() {
-            slideIndex++;
-            currentSlide(slideIndex);
-        }
-
-        function showPrevSlide() {
-            slideIndex--;
-            currentSlide(slideIndex);
-        }
-
-        function handleDragStart(e) {
-            e.preventDefault();
-            startX = e.clientX || e.touches[0].clientX;
-        }
-
-        function handleDragEnd(e) {
-            e.preventDefault();
-            endX = e.clientX || e.changedTouches[0].clientX;
-            if (startX > endX) {
-                showNextSlide();
-            } else {
-                showPrevSlide();
-            }
-        }
-
-        document.addEventListener('mousedown', handleDragStart);
-        document.addEventListener('touchstart', handleDragStart);
-
-        document.addEventListener('mouseup', handleDragEnd);
-        document.addEventListener('touchend', handleDragEnd);
-
-    </script>
+                let slideIndex = 0;
+                let startX, endX;
+        
+                showSlides();
+        
+                function showSlides() {
+                    let slides = document.getElementsByClassName("slide");
+                    for (let i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    slides[slideIndex-1].style.display = "block";
+                    setTimeout(showSlides, 3000); // Change image every 3 seconds
+                }
+        
+                function currentSlide(n) {
+                    let slides = document.getElementsByClassName("slide");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (let i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                }
+        
+                function showNextSlide() {
+                    slideIndex++;
+                    currentSlide(slideIndex);
+                }
+        
+                function showPrevSlide() {
+                    slideIndex--;
+                    currentSlide(slideIndex);
+                }
+        
+                function handleDragStart(e) {
+                    e.preventDefault();
+                    startX = e.clientX || e.touches[0].clientX;
+                }
+        
+                function handleDragEnd(e) {
+                    e.preventDefault();
+                    endX = e.clientX || e.changedTouches[0].clientX;
+                    if (startX > endX) {
+                        showNextSlide();
+                    } else {
+                        showPrevSlide();
+                    }
+                }
+        
+                let slides = document.getElementsByClassName('slide');
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].addEventListener('mousedown', handleDragStart);
+                    slides[i].addEventListener('touchstart', handleDragStart);
+        
+                    slides[i].addEventListener('mouseup', handleDragEnd);
+                    slides[i].addEventListener('touchend', handleDragEnd);
+                }
+            </script>
             <style class='flo-core-style'  media="screen"> .flo-block-category-switcher-1--729.flo-block-category-switcher-1{--ec:var(--scheme_1--text--default);--border-color:var(--scheme_1--background--accent);--hover-line-ec:var(--scheme_1--background--accent)}</style>
 
   
