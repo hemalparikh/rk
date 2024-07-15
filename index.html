@@ -9193,30 +9193,54 @@
             <style class='flo-core-style'  media="screen"> .flo-block-category-switcher-1--729.flo-block-category-switcher-1{--ec:var(--scheme_1--text--default);--border-color:var(--scheme_1--background--accent);--hover-line-ec:var(--scheme_1--background--accent)}</style>
 
   
-            <style class='flo-core-style'  media="screen">@media (max-width:767px){.flo-block--5328{margin-top:0rem;margin-bottom:0rem}}@media (min-width:768px){.flo-block--5328{margin-top:0rem;margin-bottom:0rem}}</style>
-              <style class='flo-core-style'  media="screen"> .flo-block--5328{background-color:var(--scheme_1--background--default)}</style>
+            <style>
+                .flo-block-category-switcher-1__links-list {
+                  display: block;
+                }
             
-            <div   class='flo-block flo-block--no-vertical-padding    flo-block--5328    ' data-id="5328" >
+                @media (min-width: 768px) {
+                  .flo-block-category-switcher-1__links-list {
+                    display: block !important;
+                  }
+                }
+            
+                .flo-block-category-switcher-1__title {
+                  cursor: pointer;
+                }
+              </style>
+              <div class="flo-block flo-block--no-vertical-padding flo-block--5328">
                 <div class="flo-block__container">
-                    <div class="flo-block-category-switcher-1 flo-block-category-switcher-1--729 flo-block-category-switcher-1--type-a ">
-                                    <div class="flo-block-category-switcher-1__categories-wrap" id="category-target">
-                                          <h2 class="flo-block-category-switcher-1__title" data-font='title_2/xsmall'>
-                              CATEGORIES
-                            </h2>
-                          
-                          <div class="flo-block-category-switcher-1__links-list">
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>All</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Wedding</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Pre-wedding</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Engagement</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Haldi</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Mehendi</a>
-                                              <a href="" class="flo-block-category-switcher-1__category " data-font='third_level/overline_2'>Fashion</a>
-                                          </div>
+                  <div class="flo-block-category-switcher-1 flo-block-category-switcher-1--729 flo-block-category-switcher-1--type-a">
+                    <div class="flo-block-category-switcher-1__categories-wrap" id="category-target">
+                      <h2 class="flo-block-category-switcher-1__title" data-font='title_2/xsmall'>
+                        CATEGORIES
+                      </h2>
+                      <div class="flo-block-category-switcher-1__links-list">
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>All</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Wedding</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Pre-wedding</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Engagement</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Haldi</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Mehendi</a>
+                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Fashion</a>
                       </div>
-                              </div>
                     </div>
-            </div>
+                  </div>
+                </div>
+              </div>
+            
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const title = document.querySelector('.flo-block-category-switcher-1__title');
+                  const linksList = document.querySelector('.flo-block-category-switcher-1__links-list');
+            
+                  title.addEventListener('click', function () {
+                    if (window.innerWidth < 768) {
+                      linksList.style.display = linksList.style.display === 'block' ? 'none' : 'block';
+                    }
+                  });
+                });
+              </script>
                           
                                           
                           
@@ -9478,8 +9502,8 @@
                       
                     </span>
                     <span class="flo-block-listing-2__text-area flo-block-listing-2__text-area--text-under">
-                                  <span data-font='third_level/overline_1'><a href="https://www.ashleysmithphotos.com/category/weddings/" rel="tag">Step into the spotlight!!</a></span>
-                                <a class="flo-block-listing-2__title" href="https://www.ashleysmithphotos.com/mauri-kenna-monument-valley-ut/" data-font='title_1/xsmall'>Fashion Shoot</a>
+                                  <span data-font='third_level/overline_1'><a href="" rel="tag">Step into the spotlight!!</a></span>
+                                <a class="flo-block-listing-2__title" href="" data-font='title_1/xsmall'>Fashion Shoot</a>
                               </span>
                   </div>
                   </div>
