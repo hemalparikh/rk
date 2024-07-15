@@ -9197,17 +9197,18 @@
                 .flo-block-category-switcher-1__links-list {
                   display: block;
                 }
-            
+              
                 @media (min-width: 768px) {
                   .flo-block-category-switcher-1__links-list {
                     display: block !important;
                   }
                 }
-            
+              
                 .flo-block-category-switcher-1__title {
                   cursor: pointer;
                 }
               </style>
+              
               <div class="flo-block flo-block--no-vertical-padding flo-block--5328">
                 <div class="flo-block__container">
                   <div class="flo-block-category-switcher-1 flo-block-category-switcher-1--729 flo-block-category-switcher-1--type-a">
@@ -9215,8 +9216,7 @@
                       <h2 class="flo-block-category-switcher-1__title" data-font='title_2/xsmall'>
                         CATEGORIES
                       </h2>
-                      <div class="flo-block-category-switcher-1__links-list">
-                        <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>All</a>
+                      <div class="flo-block-category-switcher-1__links-list" id="links-list">
                         <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Wedding</a>
                         <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Pre-wedding</a>
                         <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Engagement</a>
@@ -9228,19 +9228,44 @@
                   </div>
                 </div>
               </div>
-            
+              
               <script>
                 document.addEventListener('DOMContentLoaded', function () {
                   const title = document.querySelector('.flo-block-category-switcher-1__title');
-                  const linksList = document.querySelector('.flo-block-category-switcher-1__links-list');
-            
+                  const linksList = document.querySelector('#links-list');
+              
                   title.addEventListener('click', function () {
                     if (window.innerWidth < 768) {
-                      linksList.style.display = linksList.style.display === 'block' ? 'none' : 'block';
+                      linksList.style.display = linksList.style.display === 'block' ? 'block' : 'block';
                     }
+                  });
+              
+                  function updateLinksForMobile() {
+                    if (window.innerWidth < 768) {
+                      const links = linksList.querySelectorAll('.flo-block-category-switcher-1__category');
+                      links.forEach((link, index) => {
+                        if (index < links.length - 1) {
+                          link.insertAdjacentHTML('afterend', ' | ');
+                        }
+                      });
+                    }
+                  }
+              
+                  updateLinksForMobile();
+                  window.addEventListener('resize', function () {
+                    linksList.innerHTML = `
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Wedding</a>
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Pre-wedding</a>
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Engagement</a>
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Haldi</a>
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Mehendi</a>
+                      <a href="" class="flo-block-category-switcher-1__category" data-font='third_level/overline_2'>Fashion</a>
+                    `;
+                    updateLinksForMobile();
                   });
                 });
               </script>
+              
                           
                                           
                           
